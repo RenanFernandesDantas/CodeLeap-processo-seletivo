@@ -1,15 +1,14 @@
 import { useState } from 'react'
-import LoginPage from './pages/LoginPage'
-import HomePage from './pages/HomePage'
+import { LoginPage } from './pages/LoginPage';
+import { PostPage } from './pages/PostPage';
 
 function App() {
-  const [username, setUsername] = useState('')
+  const [username, setUsername] = useState<string | null>(null);
 
-  return (
-    <div className="min-h-screen">
-      {username ? <HomePage username={username} /> : <LoginPage setUsername={setUsername} />}
-    </div>
-  )
+  if (!username) {
+    return <LoginPage onLogin = {setUsername} />;
+  }
+
+  return <PostPage username = {username} />;
 }
-
-export default App
+export default App;

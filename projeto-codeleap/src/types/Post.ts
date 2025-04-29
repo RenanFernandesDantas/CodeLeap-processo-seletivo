@@ -1,7 +1,7 @@
 export interface Post {
-    id: number
-    title: string
-    content: string
-    username: string
-    createdAt: Date
+    id: number;
+    username: string;
+    title:string;
+    content: string;
+    createdAt: string;
 }
