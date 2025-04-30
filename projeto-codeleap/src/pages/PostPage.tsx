@@ -9,7 +9,22 @@ interface PostPageProps {
 }
 
 export function PostPage({ username }: PostPageProps) {
-    const [posts, setPosts] = useState<Post[]>([]);
+    const [posts, setPosts] = useState<Post[]>([
+        {
+            id: 1,
+            username: 'Joao',
+            title: 'Post do Joao',
+            content: 'Primeiro post do Joao',                             
+            createdAt: new Date().toISOString(),
+        },
+        {
+            id: 2,
+            username: 'Maria',
+            title: 'Post da Maria',
+            content: 'Primeiro post da Maria',
+            createdAt: new Date().toISOString(),
+        }
+    ]);
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
     const [selectedPost, setSelectedPost] = useState<Post | null>(null);
